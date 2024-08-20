@@ -1,0 +1,29 @@
+/* neonEffect.css */
+
+.cursor-trail, .tail {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: screen; /* For better blending with the background */
+}
+
+.cursor-trail {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px #ecf249, 0 0 30px #edf26c, 0 0 40px #ffee00e2;
+}
+
+/* Add this to your existing CSS file */
+.tail {
+    width: 100px; /* Reduced width */
+    height: 100px; /* Reduced height */
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(218, 231, 42, 0.2) 30%, rgba(246, 255, 0, 0.2) 60%, rgba(0,255,255,0) 100%);
+    filter: blur(15px); /* Adjusted blur for smaller size */
+    opacity: 0.7;
+    position: absolute; /* Position it absolutely for controlled movement */
+    border-radius: 50%; /* Make it circular */
+   
+  }
+  
+ 

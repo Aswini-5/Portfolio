@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bell+MT:wght@700&display=swap');
+
+        body {
+            font-family: 'Bell MT', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto;
+            cursor: none;  /* Allow vertical scrolling */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 8px;
+            overflow-y: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0ff;
+            font-weight: bold;
+            font-family: 'Bell MT', serif;
+            font-size: 3em;
+        }
+
+        .certification-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .certification-item {
+            display: flex;
+            align-items: flex-start;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #222;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            color: #fff;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+            background-color: #333;
+        }
+
+        .certification-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .certification-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        .certification-details h3 {
+            margin: 0;
+            color: #0ff;
+            font-weight: bold;
+        }
+
+        .certification-details .issuer,
+        .certification-details .date {
+            color: #ccc;
+        }
+
+        .certification-details .description {
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Cursor trail styles */
+        .cursor-trail, .tail {
+            position: fixed; /* Use fixed positioning for viewport-relative positioning */
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 9999; /* High z-index to ensure it's on top */
+        }
+
+        .cursor-trail {
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            box-shadow: 0 0 12px #fff, 0 0 20px #ecf249, 0 0 30px #edf26c, 0 0 40px #ffee00e2;
+        }
+
+        .tail {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(218, 231, 42, 0.2) 30%, rgba(246, 255, 0, 0.2) 60%, rgba(0,255,255,0) 100%);
+            filter: blur(20px);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Certifications</h2>
+        <div class="certification-list">
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200254.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>Coursera - Foundations of Cyber Security</h3>
+                    <p class="issuer">Issued by: Coursera</p>
+                    <p class="date">Date Completed: JUNE 2024</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200254.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>Neural Style Transfer with Tensorflow</h3>
+                    <p class="issuer">Issued by: Coursera</p>
+                    <p class="date">Date Completed : JULY 2023</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200254.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>Deep Learning with PyTorch : Neural Style Transfer</h3>
+                    <p class="issuer">Issued by: Coursera</p>
+                    <p class="date">Date Completed : JULY 2023</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200254.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>Machine Learning by Andrew Ng</h3>
+                    <p class="issuer">Issued by: Coursera</p>
+                    <p class="date">Date Completed : JULY 2023</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\e.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>Computer Forensics by edX</h3>
+                    <p class="issuer">Issued by: edX</p>
+                    <p class="date">Date Completed: APRIL 2024</p>
+                    <p class="description">The "Computer Forensics" course offered on edX provides an in-depth exploration of the techniques and methodologies used in the field of digital forensics. This course is designed to equip learners with the skills required to collect, analyze, and interpret digital evidence in a manner that is legally admissible in a court of law.</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200338.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>TryHackMe Learning Paths</h3>
+                    <p>Red Team Fundamentals</p>
+                    <p class="date">Date Completed: APRIL 2024</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200338.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>TryHackMe Learning Paths</h3>
+                    <p>Red Team Engagements</p>
+                    <p class="date">Date Completed: APRIL 2024</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <div class="certification-icon">
+                    <img src="C:\Users\kanag\Desktop\Screenshot 2024-08-17 200338.png" alt="Certification Icon">
+                </div>
+                <div class="certification-details">
+                    <h3>TryHackMe Learning Paths</h3>
+                    <p>Red Team Threat Intels</p>
+                    <p class="date">Date Completed: APRIL 2024</p>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorTrail = document.createElement('div');
+            cursorTrail.classList.add('cursor-trail');
+            document.body.appendChild(cursorTrail);
+
+            const tail = document.createElement('div');
+            tail.classList.add('tail');
+            document.body.appendChild(tail);
+
+            document.addEventListener('mousemove', (event) => {
+                const x = event.clientX;
+                const y = event.clientY;
+
+                cursorTrail.style.left = `${x}px`;
+                cursorTrail.style.top = `${y}px`;
+
+                tail.style.left = `${x}px`;
+                tail.style.top = `${y}px`;
+            });
+        });
+    </script>
+</body>
+</html>

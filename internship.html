@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship and Certification Details</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Bell MT', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        .details-section,
+        .certifications-section {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            max-width: 800px;
+            transition: box-shadow 0.5s ease;
+        }
+
+        .details-section:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); /* Neon effect */
+        }
+
+        h1 {
+            color: #00c896;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #00c896;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Neon cursor effect */
+        .cursor-trail, .tail {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: screen; /* For better blending with the background */
+        }
+
+        .cursor-trail {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            box-shadow: 0 0 10px #fff, 0 0 20px #ecf249, 0 0 30px #edf26c, 0 0 40px #ffee00e2;
+        }
+
+        .tail {
+            width: 100px; /* Reduced width */
+            height: 100px; /* Reduced height */
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(218, 231, 42, 0.2) 30%, rgba(246, 255, 0, 0.2) 60%, rgba(0,255,255,0) 100%);
+            filter: blur(15px); /* Adjusted blur for smaller size */
+            opacity: 0.7;
+            position: absolute; /* Position it absolutely for controlled movement */
+            border-radius: 50%; /* Make it circular */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="details-section">
+            <h1>Company Details</h1>
+            <div class="internship">
+                <h2>Internship at Hackup Technologies</h2>
+                <p><strong>Position:</strong> Cybersecurity Intern</p>
+                <p><strong>Duration:</strong> 10 July 2024 - 10 August 2024</p>
+                <p><strong>Responsibilities:</strong> Assisted in penetration testing, vulnerability assessment, and security analysis.</p>
+            </div>
+        </div>
+        <div class="certifications-section">
+            <div class="certification">
+                <h2><a href="C:\Users\kanag\Desktop\aswini.pdf" target="_blank">Certificate</a></h2>
+            </div>
+        </div>
+    </div>
+    <!-- Cursor trail elements -->
+    <div class="cursor-trail"></div>
+    <div class="tail"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorTrail = document.querySelector('.cursor-trail');
+            const tail = document.querySelector('.tail');
+            
+            document.addEventListener('mousemove', (event) => {
+                const x = event.clientX;
+                const y = event.clientY;
+
+                cursorTrail.style.left = `${x}px`;
+                cursorTrail.style.top = `${y}px`;
+
+                tail.style.left = `${x}px`;
+                tail.style.top = `${y}px`;
+            });
+        });
+    </script>
+</body>
+</html>

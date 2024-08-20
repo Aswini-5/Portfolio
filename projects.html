@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  
+  <!-- Internal CSS Styles -->
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Bell MT', serif;
+      color: #fff;
+      cursor: none; 
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* Black background for the whole page */
+      overflow: hidden; /* Prevent scrollbars from showing */
+    }
+
+    .header-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Space between heading and projects */
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    h1 {
+      color: #0ff; /* Neon color for the main heading */
+      font-family: 'Bell MT', serif;
+      font-size: 2.5em; /* Increased font size */
+      margin: 20px 0; /* Removed margin */
+    }
+
+    .project {
+      padding: 25px; /* Increased padding */
+      border-radius: 8px;
+      margin-bottom: 25px; /* Margin for spacing between projects */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+      background-color: #222; /* Dark background for project items */
+      color: #fff; /* White text color */
+      width: 80%; /* Adjust width to fit the page */
+      max-width: 1000px; /* Maximum width for larger screens */
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+
+    .project:nth-child(odd) {
+      background-color: #333; /* Darker background for alternate items */
+    }
+
+    .project:nth-child(even) {
+      background-color: #444; /* Slightly lighter background */
+    }
+
+    h2 {
+      color: #0ff; /* Neon color for project titles */
+      font-size: 1.0em; /* Smaller font size */
+      margin: 0; /* Remove margin */
+    }
+
+    p {
+      color: #ccc; /* Light gray color for text */
+      font-size: 1.1em; /* Increased font size */
+      margin: 15px 0; /* Increased margin */
+    }
+
+    a {
+      display: inline-block;
+      padding: 5px 10px; /* Reduced padding */
+      margin-top: 5px; /* Reduced margin */
+      background-color: #3498db;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9em; /* Reduced font size */
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #2980b9;
+    }
+
+    /* Transition and hover effects for project items */
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* Neon glow effect on hover */
+    }
+
+    /* Cursor Trail and Tail Styles */
+    .cursor-trail, .tail {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen; /* For better blending with the background */
+    }
+
+    .cursor-trail {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ecf249, 0 0 30px #edf26c, 0 0 40px #ffee00e2;
+    }
+
+    .tail {
+      width: 100px; /* Reduced width */
+      height: 100px; /* Reduced height */
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(218, 231, 42, 0.2) 30%, rgba(246, 255, 0, 0.2) 60%, rgba(0,255,255,0) 100%);
+      filter: blur(15px); /* Adjusted blur for smaller size */
+      opacity: 0.7;
+      position: absolute; /* Position it absolutely for controlled movement */
+      border-radius: 50%; /* Make it circular */
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <h1>Projects</h1>
+  </div>
+  
+  <div class="projects-container">
+    <div class="project">
+      <h2>IPL Winning Team Prediction Using Random Forest Classifier with Streamlit Interface</h2>
+      <a href="https://github.com/Aswini-5/IPL-winning-team-Prediction--2024">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h2>Website Vulnerability Detector</h2>
+      <a href="https://github.com/your-username/website-vulnerability-detector">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h2>Hash Generator</h2>
+      <a href="https://github.com/Aswini-5/Hash-Generator">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h2>Log analysis Tool</h2>
+      <a href="https://github.com/Aswini-5/Log-analysis-Tool">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h2>Image Steganography System</h2>
+      <a href="https://github.com/Aswini-5/Image-Steganography-System">View on GitHub</a>
+    </div>
+  </div>
+
+  <!-- Cursor Trail and Tail Elements -->
+  <div class="cursor-trail"></div>
+  <div class="tail"></div>
+
+  <!-- Internal JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursorTrail = document.querySelector('.cursor-trail');
+      const tail = document.querySelector('.tail');
+
+      document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+
+        cursorTrail.style.left = `${x}px`;
+        cursorTrail.style.top = `${y}px`;
+
+        tail.style.left = `${x}px`;
+        tail.style.top = `${y}px`;
+      });
+    });
+  </script>
+</body>
+</html>

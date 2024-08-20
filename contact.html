@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Aswini K</title>
+  <style>
+    body {
+      font-family: 'Bell MT', serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* Set background to black */
+      text-align: center; /* Center-align text in body */
+      overflow: hidden;
+      cursor: none;  /* Hide overflow to avoid scrollbar with cursor effect */
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #222; /* Dark background for the form */
+      border-radius: 8px;
+      text-align: center; /* Center text inside the container */
+      transition: box-shadow 0.5s ease, transform 0.3s ease; /* Smooth transitions */
+    }
+
+    .container:hover {
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff; /* Enhanced neon glow on hover */
+      transform: scale(1.02); /* Slight zoom effect */
+    }
+
+    h3 {
+      color: #0ff; /* Neon color for heading */
+      font-family: 'Bell MT', serif;
+      font-size: 2em;
+      margin-bottom: 20px; /* Adjust margin as needed */
+    }
+
+    p {
+      color: #ddd; /* Light gray color for text */
+      font-size: 1.2em;
+      font-family: 'Bell MT', serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0ff; /* Neon color for links */
+      font-family: 'Bell MT', serif;
+    }
+
+    .form-group {
+      margin-top: 20px;
+      text-align: center; /* Center the form-group content */
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+      color: #0ff; /* Neon color for labels */
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #333; /* Dark border for inputs */
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      background-color: #444; /* Dark background for inputs */
+      color: #fff; /* White text for inputs */
+      transition: box-shadow 0.3s ease; /* Smooth transition for neon effect */
+    }
+
+    .form-group textarea::placeholder {
+      color: #999; /* Light placeholder color */
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #0ff, 0 0 15px #0ff, 0 0 25px #0ff; /* Neon glow effect */
+    }
+
+    .form-group button {
+      background-color: #2980b9;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Bell MT', serif; /* Apply the Bell MT font style */
+      display: block; /* Ensure button is displayed as a block element */
+      margin: 0 auto; /* Center the button horizontally */
+    }
+
+    .form-group button:hover {
+      background-color: #1a5480;
+    }
+
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4); 
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #222;
+      color: #fff;
+      margin: 15% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 8px;
+      width: 80%; 
+      max-width: 500px; 
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cursor-trail, .tail {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen; /* For better blending with the background */
+    }
+
+    .cursor-trail {
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      box-shadow: 0 0 10px #fff, 0 0 20px #ecf249, 0 0 30px #edf26c, 0 0 40px #ffee00e2;
+    }
+
+    .tail {
+      width: 100px; /* Reduced width */
+      height: 100px; /* Reduced height */
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(218, 231, 42, 0.2) 30%, rgba(246, 255, 0, 0.2) 60%, rgba(0,255,255,0) 100%);
+      filter: blur(15px); /* Adjusted blur for smaller size */
+      opacity: 0.7;
+      position: absolute; /* Position it absolutely for controlled movement */
+      border-radius: 50%; /* Make it circular */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table style="width: 100%; border-spacing: 20px;">
+      <tr>
+        <td style="width: 30%; vertical-align: top;">
+          <h3>Contact</h3>
+        </td>
+        <td style="width: 70%; vertical-align: top;">
+          <p>
+            <strong>Phone:</strong> +91-7824914277<br>
+            <strong>Email:</strong> 
+            <a href="mailto:kanagarajaswini4@gmail.com">kanagarajaswini4@gmail.com</a>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <form id="queryForm">
+      <div class="form-group">
+        <button type="button" id="submitBtn" onclick="openModal()">Here !!</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Submit Your Query</h2>
+      <form id="modalForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="modalName">Name</label>
+          <input type="text" id="modalName" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="modalQuery">Your Question</label>
+          <textarea id="modalQuery" name="query" rows="4" placeholder="Write your query here" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('myModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target === document.getElementById('myModal')) {
+        closeModal();
+      }
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('modalName').value;
+      const query = document.getElementById('modalQuery').value;
+      alert(`Name: ${name}\nQuestion: ${query}`);
+      closeModal(); // Close the modal after submission
+    }
+
+    // Cursor trail effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursorTrail = document.createElement('div');
+      cursorTrail.className = 'cursor-trail';
+      document.body.appendChild(cursorTrail);
+
+      const tail = document.createElement('div');
+      tail.className = 'tail';
+      document.body.appendChild(tail);
+
+      document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+
+        cursorTrail.style.left = `${x}px`;
+        cursorTrail.style.top = `${y}px`;
+
+        tail.style.left = `${x}px`;
+        tail.style.top = `${y}px`;
+      });
+    });
+  </script>
+</body>
+</html>
